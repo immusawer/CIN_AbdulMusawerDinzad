@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shaped-div {
+  /* margin: 40px; */
+  /* clip-path: polygon(-20% -20%, 100% 100%, 100% 100%, 0% 100%); */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%);
+}
+
+.rotate-90 {
+  transform: rotate(-90deg);
+}
+.animated-text {
+  position: relative;
+  display: inline-block;
+  background :#1e1e1ede;
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 3s infinite alternate;
+}
+
+.animate-slide-up {
+  animation: slideUp 3s infinite alternate;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+/* styles.css */
+@keyframes countdown {
+  from {
+      stroke-dasharray: 283;
+  }
+  to {
+      stroke-dasharray: 0;
+  }
+}
+
+.circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.circle svg {
+  transform: rotate(-90deg);
+}
+
+.circle circle {
+  fill: none;
+  stroke: #4caf50;
+  stroke-width: 5;
+  stroke-dasharray: 283;
+  animation: countdown 5s linear forwards;
+}
